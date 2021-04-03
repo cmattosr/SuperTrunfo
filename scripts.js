@@ -236,7 +236,7 @@ function jogar(){
 
     if (cartas.length == 0){
       alert("Fim de jogo")
-      jogarNovamente()
+      document.getElementById('btnJogarNovamente').disabled = false
       if (pontosJogador > pontosMaquina){
         htmlResultado = '<p class="resultado-final">Jogador venceu!</p>'
         document.getElementById('btnProximaRodada').disabled = true
