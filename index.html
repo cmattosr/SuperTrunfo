@@ -1,12 +1,39 @@
 <html>
-  <head>
-    <title>SuperTrunfo da Família = Páscoa 2021</title>
-  </head>
-  
-  <body>
-  
-    <img src="Tio2.jpg"
-    
-  </body>
+
+<head>
+    <title>
+        Super Trunfo
+    </title>
+
+    <link href="https://cmattosr.github.io/supertrunfo/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-super-trunfo.png" class="page-logo"
+            alt="">
+        <h1 class="page-title">Super Trunfo da Família Pokemon - Páscoa 2021</h1>
+
+        <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+
+        <form id="form">
+            <h2>Escolha o seu atributo</h2>
+            <div class="wrapper">
+                <div id="placar"></div>
+                <div id="quantidade-cartas"></div>
+                <div id="cartas">
+                    <div id="carta-jogador" class="carta"></div>
+                    <div id="carta-maquina" class="carta"></div>
+                </div>
+                <button class="button-jogar" type="button" id="btnJogar" onclick="jogar()"
+                    disabled="false">Jogar</button>
+            </div>
+            <div id="resultado"></div>
+            <button type="button" id="btnProximaRodada" onclick="proximaRodada()" disabled="true">Proxima
+                rodada</button>
+        </form>
+    </div>
+    <script src="https://cmattosr.github.io/supertrunfo/script.js"></script>
+</body>
+
 </html>
-      
