@@ -148,6 +148,16 @@ var pontosMaquina = 0
 atualizaPlacar()
 atualizaQuantidadeCartas()
 
+function obterAtributoSelecionado(){
+  var radioAtributo = document.getElementsByName("atributo")
+  for (var i=0;i<radioAtributo.length;i++){
+    if (radioAtributo[i].checked){
+      return radioAtributo[i].value
+    }
+  }
+  return false
+}
+
 function atualizaPlacar(){
   var divPlacar = document.getElementById("placar")
   var html = "Placar: Jogador " + pontosJogador + "/" + pontosMaquina + " Máquina"
