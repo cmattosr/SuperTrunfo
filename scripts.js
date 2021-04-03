@@ -1,4 +1,4 @@
-alert("teste")
+var teste = 1
 
 var cartaMae = {
   nome: "Mãenine",
@@ -163,6 +163,7 @@ function atualizaQuantidadeCartas(){
 }
 
 function sortearCarta() {
+    teste = 0
     var numeroCartaMaquina = parseInt(Math.random() * cartas.length)
     cartaMaquina = cartas[numeroCartaMaquina]
     cartas.splice(numeroCartaMaquina, 1)
@@ -225,8 +226,10 @@ function jogar() {
     exibeCartaMaquina()
     atualizaQuantidadeCartas()
   
-    if (cartas.length == 0){
+ //   if (cartas.length == 0){
+      if (teste == 0){
       alert("Fim de jogo")
+      document.getElementById('btnJogarNovamente').disabled = false
       if (pontosJogador > pontosMaquina){
         htmlResultado = '<p class="resultado-final">Jogador venceu!</p>'
  document.getElementById('btnProximaRodada').disabled = true
@@ -271,4 +274,6 @@ function proximaRodada(){
   divResultado.innerHTML = ""
 }
 
-
+function jogarNovamente(){
+  window.location.href = window.location.href;
+}
