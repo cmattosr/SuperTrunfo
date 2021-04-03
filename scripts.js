@@ -226,8 +226,7 @@ function jogar() {
     exibeCartaMaquina()
     atualizaQuantidadeCartas()
   
- //   if (cartas.length == 0){
-      if (teste == 0){
+    if (cartas.length == 0){
       alert("Fim de jogo")
       document.getElementById('btnJogarNovamente').disabled = false
       if (pontosJogador > pontosMaquina){
