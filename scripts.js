@@ -201,10 +201,12 @@ function obtemAtributoSelecionado() {
     }
 }
 
-function jogar() {
-    var divResultado = document.getElementById("resultado")
-    var atributoSelecionado = obtemAtributoSelecionado()
+function jogar(){
+  
+  var divResultado = document.getElementById("resultado")
+  var atributoSelecionado = obterAtributoSelecionado()
 
+  if (atributoSelecionado){
     if (cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos[atributoSelecionado]) {
         htmlResultado = '<p class="resultado-final">Venceu</p>'
         pontosJogador++
@@ -214,34 +216,38 @@ function jogar() {
     } else {
         htmlResultado = '<p class="resultado-final">Empatou</p>'
     }
-  
-    divResultado.innerHTML = htmlResultado
-    document.getElementById('btnJogar').disabled = true
-    document.getElementById('btnProximaRodada').disabled = false
-  
-    atualizaPlacar()
-    exibeCartaMaquina()
-    atualizaQuantidadeCartas()
-  
+
+  divResultado.innerHTML = htmlResultado
+  document.getElementById('btnJogar').disabled = true
+  document.getElementById('btnProximaRodada').disabled = false
+
+  atualizaPlacar()
+  exibeCartaMaquina()
+  atualizaQuantidadeCartas()
+
     if (cartas.length == 0){
       alert("Fim de jogo")
-      document.getElementById('btnJogarNovamente').disabled = false
       if (pontosJogador > pontosMaquina){
         htmlResultado = '<p class="resultado-final">Jogador venceu!</p>'
- document.getElementById('btnProximaRodada').disabled = true
+        document.getElementById('btnProximaRodada').disabled = true
       } else if (pontosMaquina > pontosJogador){
         htmlResultado = '<p class="resultado-final">Máquina venceu!</p>'
- document.getElementById('btnProximaRodada').disabled = true
+        document.getElementById('btnProximaRodada').disabled = true
       }else {
         htmlResultado = '<p class="resultado-final">Empate!</p>'
- document.getElementById('btnProximaRodada').disabled = true
-    }
+        document.getElementById('btnProximaRodada').disabled = true
+      }
     }else{
-  document.getElementById('btnProximaRodada').disabled = false
-  }
+      document.getElementById('btnProximaRodada').disabled = false
+    }
 
 divResultado.innerHTML = htmlResultado
+
+} else {
+    alert("Por favor selecione um atributo")
+  }
 }
+
 
 function exibeCartaMaquina() {
     var divCartaMaquina = document.getElementById("carta-maquina")
