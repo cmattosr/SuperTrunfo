@@ -169,7 +169,7 @@ function sortearCarta() {
 
     cartaJogador = cartas[numeroCartaJogador]
     cartas.splice(numeroCartaJogador, 1)
-
+    atualizaQuantidadeCartas()
     document.getElementById('btnSortear').disabled = true
     document.getElementById('btnJogar').disabled = false
 
@@ -233,7 +233,6 @@ function jogar(){
 
   atualizaPlacar()
   exibeCartaMaquina()
-  atualizaQuantidadeCartas()
 
     if (cartas.length == 0){
       alert("Fim de jogo")
