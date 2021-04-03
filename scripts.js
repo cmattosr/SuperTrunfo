@@ -1,5 +1,3 @@
-var teste = 1
-
 var cartaMae = {
   nome: "Mãenine",
   imagem: "https://cmattosr.github.io/pascoa2021/Mae.jpg",
@@ -163,7 +161,6 @@ function atualizaQuantidadeCartas(){
 }
 
 function sortearCarta() {
-    teste = 0
     var numeroCartaMaquina = parseInt(Math.random() * cartas.length)
     cartaMaquina = cartas[numeroCartaMaquina]
     cartas.splice(numeroCartaMaquina, 1)
